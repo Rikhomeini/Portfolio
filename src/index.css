@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variabel warna utama */
+:root {
+  --neon-blue: #00f3ff;
+  --darker: #080b12;
+  --dark: #0f172a;
+  --gradient-blue-purple: linear-gradient(135deg, #001f3f, #38003c);
+  --gradient-sunrise: linear-gradient(135deg, #ff5f6d, #ffc371);
+  --cosmos:radial-gradient(circle at top left, #240b36, #001f3f);
+}
+
+/* Styling dasar untuk body */
+body {
+  background: var(--gradient-blue-purple); /* Pakai variabel gradient */
+  color: white;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+
+/* Efek teks neon */
+.neon-text {
+  color: var(--neon-blue);
+  text-shadow: 
+    0 0 7px var(--neon-blue),
+    0 0 10px var(--neon-blue),
+    0 0 21px var(--neon-blue);
+}
+
+/* Efek latar belakang kaca (glass effect) */
+.glass-bg {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Styling untuk scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--darker);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neon-blue);
+  border-radius: 5px;
+  opacity: 0.5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  opacity: 1;
+}
+
+/* Efek bayangan neon */
+.shadow-neon-blue {
+  box-shadow: 
+    0 0 5px var(--neon-blue),
+    0 0 20px rgba(0, 243, 255, 0.2);
+}
+
+/* Kelas untuk animasi */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Efek hover mengangkat elemen */
+.hover-lift {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+/* Latar belakang grid */
+.grid-bg {
+  background-size: 50px 50px;
+  background-image: linear-gradient(to right, rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+}
+
+/* Transisi umum */
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+/* Styling untuk konten yang bisa di-hover */
+.hover-content {
+  @apply transition-all duration-300;
+}
+
+.hover-content:hover {
+  @apply scale-105;
+}
+
+/* Efek blur untuk overlay */
+.blur-overlay {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* Styling untuk kartu proyek */
+.project-card {
+  @apply glass-bg border border-neon-blue/20 rounded-lg overflow-hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+  @apply border-neon-blue/50;
+  transform: translateY(-5px);
+}
