@@ -65,12 +65,32 @@ const Hero = () => {
           </motion.div>
 
           <motion.div variants={itemVariants} className="flex gap-4 justify-center">
-            <Button variant="primary" size="lg" aria-label="View my projects">
-              View Projects
-            </Button>
-            <Button variant="secondary" size="lg" aria-label="Contact me">
-              Contact Me
-            </Button>
+          <Button
+  variant="primary"
+  size="lg"
+  aria-label="View my projects"
+  onClick={() => {
+    const section = document.getElementById('projects');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }}
+>
+  View Projects
+</Button>
+<Button
+  variant="secondary"
+  size="lg"
+  aria-label="Contact me"
+  onClick={() => {
+    const section = document.getElementById('contact');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }}
+>
+  Contact Me
+</Button>
           </motion.div>
 
           {/* Technology icons */}
